@@ -1,0 +1,360 @@
+
+
+
+import json
+import os
+import subprocess
+import sys
+import traceback
+import pyodbc
+
+debugModeExt = "FALSE"
+
+
+
+interactiveLog = ''
+if debugModeExt == 'TRUE':
+    debugMode = True
+else:
+    debugMode = False
+
+def write_audit(message = '', logType = 'audit', statusCode = 'I'):
+    # statusCodes 'E' = error, 'W' Warning, 'I' information, 'S' Success
+    global interactiveLog
+    if is_red_interactive():
+        #message = ' : '.join([logType,statusCode,message])
+        interactiveLog = '\n'.join([interactiveLog, message])
+    else:
+        outputJson = json.dumps({"type": logType, "message": message, "statusCode": statusCode})
+        print(outputJson, flush=True)
+
+def write_error(message = ''):
+    write_audit(message, 'audit', 'E')
+
+def write_detail(message = '', statusCode = 'I'):
+    if debugMode:
+        write_audit(message, 'detail', statusCode)
+
+def write_result(message = '', statusCode = 'S'):
+    write_audit(message, 'result', statusCode)
+
+def is_red_interactive():
+
+    if os.environ.get('WSL_JOB_KEY','') == '0' and os.environ.get('WSL_JOB_NAME','') == 'Develop':
+        return False
+    else:
+        return False
+
+def exit_script(exitCode = 0, message = 'Executed the script'):
+    if is_red_interactive():
+        if exitCode != 0:
+            print(-2, flush=True)
+        else:
+            print(1, flush=True)
+        print(message, flush=True)
+        print(interactiveLog, flush=True)
+        sys.exit(0)
+    else:
+        if exitCode != 0:
+            write_result(message,'E')
+        else:
+            write_result(message,'S')
+        sys.exit(exitCode)
+
+
+
+
+
+def ExecuteSQLBlock(
+    block,
+    uidSF = str(os.environ.get('WSL_TGT_USER','')),
+    pwdSF = str(os.environ.get('WSL_TGT_PWD','')),
+    dsnSF = str(os.environ.get('WSL_TGT_DSN','')),
+    serverSF= str(os.environ.get('WSL_TGT_SERVER',''))
+    ):
+    if block.isspace() or block == "":
+        return True
+    try:
+        if os.environ.get('WSL_TGT_CONSTRING','') != "":
+            SFConnectionString = os.environ.get('WSL_TGT_CONSTRING','')
+        else:
+            uid = uidSF
+            pwd = pwdSF
+            SFConnectionString = "DSN=" + dsnSF
+            if uid and not uid.isspace():
+              SFConnectionString += ";UID="+uid
+            if pwd and not pwd.isspace():
+              SFConnectionString += ";PWD="+pwd
+        SFConnection = pyodbc.connect(SFConnectionString, autocommit=True)
+        SFconn = SFConnection.cursor()
+        try:
+            result = SFconn.execute(block)
+        except pyodbc.ProgrammingError as e:
+            if str(e) == 'No results.  Previous SQL was not a query.':
+                return True
+            else:
+                write_error(f"SQL error: {e}")
+                raise e
+        SFconn.close()
+        return True
+    except Exception as exceptionError:
+        write_error(f"SQL error or connection error has occurred: {block}" + repr(exceptionError))
+        raise exceptionError
+
+def Ws_Call_Procedure(
+    procName
+    ):
+    sequence = os.environ["WSL_SEQUENCE"]
+    jobName = os.environ["WSL_JOB_NAME"]
+    taskName = os.environ["WSL_TASK_NAME"]
+    jobId = os.environ["WSL_JOB_KEY"]
+    taskId = os.environ["WSL_TASK_KEY"]
+    try:
+        if os.environ.get('WSL_TGT_CONSTRING','') != "":
+            ConnectionString = os.environ.get('WSL_TGT_CONSTRING','')
+        else:
+            uid=str(os.environ.get('WSL_TGT_USER',''))
+            pwd=str(os.environ.get('WSL_TGT_PWD',''))
+            ConnectionString = "DSN="+str(os.environ.get('WSL_TGT_DSN',''))
+            if uid and not uid.isspace():
+              ConnectionString += ";UID="+uid
+            if pwd and not pwd.isspace():
+              ConnectionString += ";PWD="+pwd
+        conn = pyodbc.connect(ConnectionString, autocommit=True)
+        sql ="""DECLARE
+                @p_return_msg varchar(1024),
+                @p_status int
+
+              EXEC ?
+              @p_sequence = ?,
+              @p_job_name = ?,
+              @p_task_name = ?,
+              @p_job_id = ?,
+              @p_task_id = ?,
+              @p_return_msg = @p_return_msg OUTPUT,
+              @p_status = @p_status OUTPUT;
+
+              SELECT @p_return_msg as p_return_msg,
+              @p_status as p_status"""
+
+        Parameters=[procName,sequence,jobName,taskName,jobId,taskId]
+        cursor = conn.cursor()
+        try:
+            cursor.execute(sql,Parameters)
+        except pyodbc.Error as sql_error:
+            write_error(f"SQL error has occurred ")
+            raise sql_error
+        returnValues = cursor.fetchall()
+        if returnValues[0][1] == 1:
+            return True, returnValues[0][0]
+        else:
+            cursor.close()
+            return False, returnValues[0][0]
+    except Exception as exceptionError:
+        write_error(f"Procedure error or connection error has occurred: {procName}" + repr(exceptionError))
+        raise exceptionError
+
+def ExecuteProcedure(procName):
+    result = Ws_Call_Procedure(f"{procName}")
+    scriptResultMessage = result[1]
+    if result[0] == True:
+        scriptResultCode = 1
+        write_audit(f"Execution of Table {procName} completed successfully")
+        write_audit(str(scriptResultMessage))
+    else:
+        write_error(f"Execution of Table {procName} Failed")
+        write_error(str(scriptResultMessage))
+        raise Exception(f"Execution of Table {procName} Failed")
+
+
+def ExecuteScript(name):
+  env = dict(os.environ)
+  # Environment variables specific to the script (e.g. WORKDIR, which comes
+  # from the script's connection) are stored prefixed. We copy such variables
+  # to their unprefixed name.
+  prefix = 'WSL_SCRIPT_{}_'.format(name)
+  command = os.getenv(prefix + 'COMMAND')
+  if not command:
+    raise Exception("Script {} is not defined".format(name))
+  write_audit("Executing command: {}".format(command))
+  for var in os.environ:
+    if var.startswith(prefix):
+      unprefixedvar = 'WSL_' + var[len(prefix):]
+      write_audit("Overriding environment: {} -> {}".format(var, unprefixedvar))
+      env[unprefixedvar] = os.environ[var]
+  # Assume that we can just pass all the output from the script as our output
+  # and the return code indicates success/failure
+  result = subprocess.run(command, shell=True, env=env, stderr=subprocess.PIPE, text=True)
+  return_code = result.returncode if result.returncode < 2**31 else result.returncode - 2**32
+  if result.stderr != "" or str(return_code) != "0":
+    write_error("Script execution failed. Check detail log for failure reason")
+    if result.stderr != "":
+        write_error(str(result.stderr))
+    raise Exception(f"Error occurred while executing script")
+
+
+
+
+def CreateTable():
+  result = ExecuteSQLBlock(r"""
+CREATE TABLE $OBJECT$ (
+dim_date_key integer
+, calendar_date datetime NOT NULL
+, cal_day_in_week varchar(30)
+, cal_day_in_week_no int
+, cal_day_in_month int
+, cal_day_in_year int
+, cal_week_in_year int
+, cal_month_no int
+, cal_month int
+, cal_month_name varchar(30)
+, cal_quarter_no int
+, cal_quarter int
+, cal_year int
+, financial_date datetime
+, fin_day_in_week varchar(30)
+, fin_day_in_week_no int
+, fin_day_in_month int
+, fin_day_in_year int
+, fin_week_in_month int
+, fin_week_in_year int
+, fin_month_no int
+, fin_month int
+, fin_month_name varchar(30)
+, fin_period varchar(30)
+, fin_quarter_no int
+, fin_quarter int
+, fin_year int
+, current_cal_day varchar(30)
+, current_cal_week varchar(30)
+, current_cal_month varchar(30)
+, current_cal_year varchar(30)
+, current_cal_mtd varchar(30)
+, current_cal_ytd varchar(30)
+, moving_cal_year varchar(30)
+, current_fin_day varchar(30)
+, current_fin_week varchar(30)
+, current_fin_month varchar(30)
+, current_fin_quarter varchar(30)
+, current_fin_year varchar(30)
+, current_fin_mtd varchar(30)
+, current_fin_ytd varchar(30)
+, moving_fin_quarter varchar(30)
+, moving_fin_year varchar(30)
+, week_day_flag varchar(30)
+, week_end_flag varchar(30)
+, holiday_flag varchar(30)
+, holiday_desc varchar(64)
+, trading_day_flag varchar(30)
+, trading_days_in_mth int
+, trading_days_so_far int
+, dss_create_time datetime
+, dss_update_time datetime
+)
+
+
+<EOS>
+
+""")
+  if result == True:
+    write_audit("Create of Table $OBJECT$ completed successfully")
+
+def DropTable():
+  result = ExecuteSQLBlock(r"""
+DROP TABLE $OBJECT$
+""")
+  if result == True:
+    write_audit("Dropped table $OBJECT$")
+
+def TruncateTable():
+  result = ExecuteSQLBlock(r"""
+TRUNCATE TABLE $OBJECT$
+""")
+  if result == True:
+    write_audit("Truncated table $OBJECT$")
+
+def RunPreLoadSQL():
+    pass
+
+def PreDrop():
+  pass
+
+def DssAfterLoad():
+  result = ExecuteSQLBlock(r"""
+    UPDATE $OBJECT$
+    SET
+
+  """)
+  if result == True:
+    write_audit("DSS Columns Updated")
+
+def DropAll():
+  pass
+
+def Build():
+  pass
+
+def BuildAll():
+  pass
+
+def Process():
+
+  PreDrop()
+  Primary()
+  Build()
+
+def Initial():
+  DropAll()
+  Secondary()
+  BuildAll()
+
+def Primary():
+  ExecuteProcedure("[SCHEMA.update_dim_date_azsql].update_dim_date_azsql")
+
+
+def Secondary():
+  pass
+
+def AnalyzeTable():
+  raise Exception("Not implemented")
+
+
+
+actions = {
+  "2" : CreateTable,
+  "1" : DropTable,
+  "19" : TruncateTable,
+  "4" : PreDrop,
+  "3" : DropAll,
+  "9" : Build,
+  "10" : BuildAll,
+  "6" : Primary,
+  "18" : Secondary,
+  "8" : Process,
+  "15" : Initial,
+  "11" : AnalyzeTable,
+}
+
+try:
+  if len(sys.argv) > 1:
+    action = sys.argv[1]
+  else:
+    raise Exception("Missing action code command-line parameter")
+
+  if action not in actions:
+    raise Exception("Action code {} is not implemented for {} {}".format(action, "Dimension", "dim_date_azsql"))
+
+  actionFunc = actions[action]
+
+  actionFunc()
+  actionName = str(actions[action])[str(actions[action]).find("function")+9:str(actions[action]).find(" at")]
+except Exception as exceptionError:
+  write_error("{} failed".format(exceptionError.args))
+  write_error(traceback.format_exc())
+  exitCode = 2
+  exitMessage = 'Script run failed'
+else:
+    exitCode = 0
+    exitMessage = "{} completed successfully".format(actionName)
+finally:
+    exit_script(exitCode, exitMessage)
