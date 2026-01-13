@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wherescape.com/xml/Workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/Workflow workflow_4.xsd">
+  <xml_version>4</xml_version>
+  <name>Business Vault</name>
+  <type>Version</type>
+  <button name="Document Model">
+    <button_desc>Generate model and source system documentation, data validation documentation or documentation comparing source systems.</button_desc>
+    <button_icon>doco.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Document Model</button_value>
+  </button>
+  <button name="Compare Models">
+    <button_desc>Compare the structure, business rules or profiling metrics for multiple models.</button_desc>
+    <button_icon>compare-models.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Compare Models</button_value>
+  </button>
+  <button name="Merge Into Other Model">
+    <button_desc>It can often be useful to merge changes to a model into another model particularly when working in a repository or on a design imported from another modeling tool.</button_desc>
+    <button_icon>Mergemodels.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Merge Into Other Model</button_value>
+  </button>
+  <button name="Advanced Copy">
+    <button_desc>Copy a model with the ability to configure the following settings:
+- Set the copied versions to use the original source mappings.
+- Import hidden objects.
+- Apply model conversions.</button_desc>
+    <button_icon>copy.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Advanced Copy</button_value>
+  </button>
+  <button name="Create BV Deployment">
+    <button_desc>The Generate business vault deployment wizard can be used to create and configure a business vault deployment model.</button_desc>
+    <button_icon>generate-business-vault.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create BV Deployment</button_value>
+  </button>
+  <button name="Create Bridge Table">
+    <button_desc>The Bridge Wizard enables you to create Bridge tables that pull fields from multiple links and their related hubs and Satellite Current Views. Options are available for adding a surrogate key and calculated columns.</button_desc>
+    <button_icon>bridge_table_create.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create Bridge Table</button_value>
+  </button>
+  <button name="Create PIT Table">
+    <button_desc>The PIT (Point in Time) Wizard can be used to create snapshots of the most recent or relevant Satellite records (by load date/time) for a specific Hub or Link at a given point in time.</button_desc>
+    <button_icon>pit_table_create.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create PIT Table</button_value>
+  </button>
+</workflow>

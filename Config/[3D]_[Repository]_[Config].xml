@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repository_settings xmlns="http://www.wherescape.com/xml/RepositorySettings" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/RepositorySettings repository_settings_1.xsd">
+  <xml_version>1</xml_version>
+  <structure>
+    <general>
+      <repository_name>ssh_demo</repository_name>
+      <repository_purpose>Repo: ssh_demo Branch: development Commit: 1f976b9</repository_purpose>
+      <repository_description>CICD-Testing</repository_description>
+      <repository_workflow>Custom Repository</repository_workflow>
+    </general>
+    <integrations>
+      <purview />
+    </integrations>
+    <discovery>
+      <default>quick</default>
+      <sql_server>generic</sql_server>
+      <teradata>wherescape</teradata>
+      <oracle>generic</oracle>
+      <db2>generic</db2>
+      <other>generic</other>
+    </discovery>
+    <profiling>
+      <default>quick</default>
+      <sql_server type="generic" />
+      <teradata type="wherescape">Teradata Specifics</teradata>
+      <oracle type="wherescape">Oracle first 1,000 row sample</oracle>
+      <db2 type="wherescape">DB2 Specifics</db2>
+    </profiling>
+    <default_category_naming_standards>
+      <entity_types>
+        <entity_type>
+          <name>View</name>
+        </entity_type>
+        <entity_type>
+          <name>Fact Source</name>
+        </entity_type>
+        <entity_type>
+          <name>Non Star Schema Table</name>
+        </entity_type>
+        <entity_type>
+          <name>Fact</name>
+          <prefix>fact_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>Dimension</name>
+          <prefix>dim_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>Changing Dimension</name>
+          <prefix>dim_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>Previous Dimension</name>
+          <prefix>dim_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>Ranged Dimension</name>
+          <prefix>dim_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>Predefined</name>
+        </entity_type>
+        <entity_type>
+          <name>Hub</name>
+          <prefix>h_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>Link</name>
+          <prefix>l_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>Satellite</name>
+          <prefix>s_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>Reference</name>
+          <prefix>r_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>Code</name>
+          <prefix>c_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>Load</name>
+          <prefix>load_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>Stage</name>
+          <prefix>stage_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>Stage-Data Vault Stage</name>
+          <prefix>stage_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>EDW 3NF</name>
+        </entity_type>
+        <entity_type>
+          <name>EDW 3NF-History</name>
+        </entity_type>
+        <entity_type>
+          <name>Data Store</name>
+        </entity_type>
+        <entity_type>
+          <name>Data Store-History</name>
+        </entity_type>
+        <entity_type>
+          <name>Satellite-History</name>
+        </entity_type>
+        <entity_type>
+          <name>PIT</name>
+          <prefix>pit_</prefix>
+        </entity_type>
+        <entity_type>
+          <name>Bridge</name>
+          <prefix>bridge_</prefix>
+        </entity_type>
+      </entity_types>
+      <data_warehouse_attributes>
+        <data_warehouse_attribute name="dss_update_time">dss_update_time</data_warehouse_attribute>
+        <data_warehouse_attribute name="dss_start_date">dss_start_date</data_warehouse_attribute>
+        <data_warehouse_attribute name="dss_end_date">dss_end_date</data_warehouse_attribute>
+        <data_warehouse_attribute name="dss_current_flag">dss_current_flag</data_warehouse_attribute>
+        <data_warehouse_attribute name="dss_version">dss_version</data_warehouse_attribute>
+        <data_warehouse_attribute name="dss_record_source">dss_record_source</data_warehouse_attribute>
+        <data_warehouse_attribute name="dss_load_date">dss_load_date</data_warehouse_attribute>
+        <data_warehouse_attribute name="dss_create_time">dss_create_time</data_warehouse_attribute>
+        <data_warehouse_attribute name="dss_change_hash">dss_change_hash</data_warehouse_attribute>
+      </data_warehouse_attributes>
+    </default_category_naming_standards>
+    <keywords>
+      <keyword>
+        <name>PARTITION</name>
+        <data_type>BOOLEAN</data_type>
+      </keyword>
+      <keyword>
+        <name>HIERARCHY</name>
+        <data_type>BOOLEAN</data_type>
+      </keyword>
+      <keyword>
+        <name>AGGREGATE</name>
+        <data_type>BOOLEAN</data_type>
+      </keyword>
+      <keyword>
+        <name>ROLLUP</name>
+        <data_type>BOOLEAN</data_type>
+      </keyword>
+    </keywords>
+    <note_category>
+      <note>
+        <name>Observation Note</name>
+        <colour>255,255,255</colour>
+      </note>
+    </note_category>
+    <documentation>
+      <level name="DbConn">
+        <subjects>
+          <subject enabled="true">
+            <label>General info</label>
+            <name>General information</name>
+          </subject>
+        </subjects>
+      </level>
+      <level name="HostConn">
+        <subjects>
+          <subject enabled="true">
+            <label>General info</label>
+            <name>General information</name>
+          </subject>
+        </subjects>
+      </level>
+    </documentation>
+    <storage_target_locations>
+      <storage_target_location name="RAWVAULT">
+        <target_location_rdbms>Oracle</target_location_rdbms>
+      </storage_target_location>
+      <storage_target_location name="LOAD">
+        <target_location_rdbms>Oracle</target_location_rdbms>
+      </storage_target_location>
+      <storage_target_location name="STAGE">
+        <target_location_rdbms>Oracle</target_location_rdbms>
+      </storage_target_location>
+    </storage_target_locations>
+  </structure>
+</repository_settings>

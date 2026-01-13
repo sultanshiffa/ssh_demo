@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wherescape.com/xml/Workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/Workflow workflow_4.xsd">
+  <xml_version>4</xml_version>
+  <name>RED Export</name>
+  <type>Version</type>
+  <button name="Compare Models">
+    <button_desc>Compare the structure, business rules or profiling metrics for multiple models.</button_desc>
+    <button_icon>compare-models.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Compare Models</button_value>
+  </button>
+  <button name="Generate DDL">
+    <button_desc>Generate DDL for all entities in a model, with the option to filter by target location.</button_desc>
+    <button_icon>ddl.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Generate DDL</button_value>
+  </button>
+  <button name="Export to RED">
+    <button_desc>Export your models to WhereScape RED where you can build and manage your data warehouse.</button_desc>
+    <button_icon>red_model.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Export to RED</button_value>
+  </button>
+</workflow>

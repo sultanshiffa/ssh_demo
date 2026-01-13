@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wherescape.com/xml/Workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/Workflow workflow_4.xsd">
+  <xml_version>4</xml_version>
+  <name>Logical</name>
+  <type>Version</type>
+  <button name="Create Table">
+    <button_desc>Create a new table in the selected model.</button_desc>
+    <button_icon>table_create.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create Table</button_value>
+  </button>
+  <button name="Import From External Format">
+    <button_desc>Import models into WhereScape 3D from the following formats:
+- ERwin xsd (*.xsd)
+- PowerDesigner conceptual, logical and physical models (*.cdm, *.ldm, *.pdm)
+- Common warehouse metamodel (*.xmi)
+- 3D xml (*.xml, *.ws3d)
+ER/Studio models can be exported as native WhereScape 3D models files from Team Server.</button_desc>
+    <button_icon>import_model_external.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Import From External Format</button_value>
+  </button>
+  <button name="Create Star Schema">
+    <button_desc>The Creating a Star Schema wizard enables you to create a star schema from source data.</button_desc>
+    <button_icon>data_warehouse.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create Star Schema</button_value>
+  </button>
+  <button name="Create Physical Model">
+    <button_desc>Create a physical model containing database specific information like specific column data types etc.</button_desc>
+    <button_icon>model_physical.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create Physical Model</button_value>
+  </button>
+  <button name="Advanced Copy">
+    <button_desc>Copy a model with the ability to configure the following settings:
+- Set the copied versions to use the original source mappings.
+- Import hidden objects.
+- Apply model conversions.</button_desc>
+    <button_icon>copy.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Advanced Copy</button_value>
+  </button>
+  <button name="Document Model">
+    <button_desc>Generate model and source system documentation, data validation documentation or documentation comparing source systems.</button_desc>
+    <button_icon>doco.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Document Model</button_value>
+  </button>
+  <button name="Compare Models">
+    <button_desc>Compare the structure, business rules or profiling metrics for multiple models.</button_desc>
+    <button_icon>compare-models.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Compare Models</button_value>
+  </button>
+  <button name="Merge Into Other Model">
+    <button_desc>It can often be useful to merge changes to a model into another model particularly when working in a repository or on a design imported from another modeling tool.</button_desc>
+    <button_icon>Mergemodels.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Merge Into Other Model</button_value>
+  </button>
+</workflow>

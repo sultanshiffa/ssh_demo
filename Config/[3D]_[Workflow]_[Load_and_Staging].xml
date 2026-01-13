@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wherescape.com/xml/Workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/Workflow workflow_4.xsd">
+  <xml_version>4</xml_version>
+  <name>Load and Staging</name>
+  <type>Version</type>
+  <button name="Document Model">
+    <button_desc>Generate model and source system documentation, data validation documentation or documentation comparing source systems.</button_desc>
+    <button_icon>doco.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Document Model</button_value>
+  </button>
+  <button name="Compare Models">
+    <button_desc>Compare the structure, business rules or profiling metrics for multiple models.</button_desc>
+    <button_icon>compare-models.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Compare Models</button_value>
+  </button>
+  <button name="Populate Entity Queries">
+    <button_desc>Populate the query and/or dw query fields on all entities in a model version, group or schema.</button_desc>
+    <button_icon>populate_entity_queries.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Populate Entity Queries</button_value>
+  </button>
+  <button name="Generate DDL">
+    <button_desc>Generate DDL for all entities in a model, with the option to filter by target location.</button_desc>
+    <button_icon>ddl.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Generate DDL</button_value>
+  </button>
+  <button name="Advanced Copy">
+    <button_desc>Copy a model with the ability to configure the following settings:
+- Set the copied versions to use the original source mappings.
+- Import hidden objects.
+- Apply model conversions.</button_desc>
+    <button_icon>copy.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Advanced Copy</button_value>
+  </button>
+  <button name="Prepare for RED">
+    <button_desc>The Prepare for RED wizard enables you to move a Load and staging model into a WhereScape RED export model.</button_desc>
+    <button_icon>red_model.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Prepare for RED</button_value>
+  </button>
+</workflow>

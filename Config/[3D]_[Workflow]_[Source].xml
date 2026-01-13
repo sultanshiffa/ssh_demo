@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wherescape.com/xml/Workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/Workflow workflow_4.xsd">
+  <xml_version>4</xml_version>
+  <name>Source</name>
+  <type>Version</type>
+  <button name="Discover">
+    <button_desc>The discovery process detects structural information related to entities in database systems and file systems.</button_desc>
+    <button_icon>discover.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Discover</button_value>
+  </button>
+  <button name="Derive Relations">
+    <button_desc>The Derive Foreign Key Joins Wizard is used to determine the joins between entities in a model version when foreign keys are not defined in the database system.</button_desc>
+    <button_icon>discover_join.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Derive Relations</button_value>
+  </button>
+  <button name="Profile Data">
+    <button_desc>Profiling is the process of inspecting data and collecting information about the characteristics of the data contained by a source system.</button_desc>
+    <button_icon>profile.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Profile Data</button_value>
+  </button>
+  <button name="Document Model">
+    <button_desc>Generate model and source system documentation, data validation documentation or documentation comparing source systems.</button_desc>
+    <button_icon>doco.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Document Model</button_value>
+  </button>
+  <button name="Compare Models">
+    <button_desc>Compare the structure, business rules or profiling metrics for multiple models.</button_desc>
+    <button_icon>compare-models.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Compare Models</button_value>
+  </button>
+  <button name="Create Star Schema">
+    <button_desc>The Creating a Star Schema wizard enables you to create a star schema from source data.</button_desc>
+    <button_icon>model.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create Star Schema</button_value>
+  </button>
+  <button name="Create EDW">
+    <button_desc>Launch the create an EDW wizard.</button_desc>
+    <button_icon>edw-category.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create EDW</button_value>
+  </button>
+  <button name="Create Data Vault Design">
+    <button_desc>The Create Data Vault Design wizard enables you to create a model from your source data to be used for generating a data vault.</button_desc>
+    <button_icon>cube_dim.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create Data Vault Design</button_value>
+  </button>
+  <button name="Advanced Copy">
+    <button_desc>Copy a model with the ability to configure the following settings:
+- Set the copied versions to use the original source mappings.
+- Import hidden objects.
+- Apply model conversions.</button_desc>
+    <button_icon>copy.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Advanced Copy</button_value>
+  </button>
+</workflow>

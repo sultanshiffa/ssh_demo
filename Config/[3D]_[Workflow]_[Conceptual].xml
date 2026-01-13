@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wherescape.com/xml/Workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/Workflow workflow_4.xsd">
+  <xml_version>4</xml_version>
+  <name>Conceptual</name>
+  <type>Version</type>
+  <button name="Create Table">
+    <button_desc>Create a new table in the selected model.</button_desc>
+    <button_icon>table_create.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create Table</button_value>
+  </button>
+  <button name="Create Logical Model">
+    <button_desc>Generate a logical model from your conceptual models.</button_desc>
+    <button_icon>model_logical.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create Logical Model</button_value>
+  </button>
+  <button name="Document Model">
+    <button_desc>Generate model and source system documentation, data validation documentation or documentation comparing source systems.</button_desc>
+    <button_icon>doco.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Document Model</button_value>
+  </button>
+  <button name="Compare Models">
+    <button_desc>Compare the structure, business rules or profiling metrics for multiple models.</button_desc>
+    <button_icon>compare-models.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Compare Models</button_value>
+  </button>
+  <button name="Advanced Copy">
+    <button_desc>Copy a model with the ability to configure the following settings:
+- Set the copied versions to use the original source mappings.
+- Import hidden objects.
+- Apply model conversions.</button_desc>
+    <button_icon>copy.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Advanced Copy</button_value>
+  </button>
+</workflow>

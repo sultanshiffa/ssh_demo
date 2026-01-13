@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wherescape.com/xml/Workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/Workflow workflow_4.xsd">
+  <xml_version>4</xml_version>
+  <name>Default Category Workflow</name>
+  <type>Category</type>
+  <button name="Create New Model Version">
+    <button_desc>Create new model versions in the category.</button_desc>
+    <button_icon>model.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create New Model Version</button_value>
+  </button>
+</workflow>

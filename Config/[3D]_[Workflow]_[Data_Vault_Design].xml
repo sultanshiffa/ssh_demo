@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wherescape.com/xml/Workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/Workflow workflow_4.xsd">
+  <xml_version>4</xml_version>
+  <name>Data Vault Design</name>
+  <type>Version</type>
+  <button name="Manage Attribute Types">
+    <button_desc>The Manage Attribute Type Wizard enables you to add additional attribute types to support splitting entities into different Satellites for the selected category.</button_desc>
+    <button_icon>manage-attribute-types.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Manage Attribute Types</button_value>
+  </button>
+  <button name="Create Table">
+    <button_desc>Create a new table in the selected model.</button_desc>
+    <button_icon>table_create.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create Table</button_value>
+  </button>
+  <button name="Assign Attribute Types">
+    <button_desc>The Assign Attribute Type Wizard enables you to bulk assign attribute types across a model thus helping you to quickly mark up a model with the attribute type.</button_desc>
+    <button_icon>attribute_type_assign.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Assign Attribute Types</button_value>
+  </button>
+  <button name="Add Source Mappings">
+    <button_desc>The Add Source Mappings wizard enables you to map a model onto another model by using exact name matching with case sensitive options.</button_desc>
+    <button_icon>add_source.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Add Source Mappings</button_value>
+  </button>
+  <button name="Compare Models">
+    <button_desc>Compare the structure, business rules or profiling metrics for multiple models.</button_desc>
+    <button_icon>compare-models.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Compare Models</button_value>
+  </button>
+  <button name="Merge Into Other Model">
+    <button_desc>It can often be useful to merge changes to a model into another model particularly when working in a repository or on a design imported from another modeling tool.</button_desc>
+    <button_icon>Mergemodels.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Merge Into Other Model</button_value>
+  </button>
+  <button name="Generate Data Vault">
+    <button_desc>The Generating Data Vault wizard enables you to create a data vault from a data vault design model. After the wizard is run successfully, a data vault is generated.</button_desc>
+    <button_icon>cube_dim.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Generate Data Vault</button_value>
+  </button>
+  <button name="Advanced Copy">
+    <button_desc>Copy a model with the ability to configure the following settings:
+- Set the copied versions to use the original source mappings.
+- Import hidden objects.
+- Apply model conversions.</button_desc>
+    <button_icon>copy.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Advanced Copy</button_value>
+  </button>
+</workflow>

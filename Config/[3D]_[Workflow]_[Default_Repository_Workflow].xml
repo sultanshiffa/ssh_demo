@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wherescape.com/xml/Workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/Workflow workflow_4.xsd">
+  <xml_version>4</xml_version>
+  <name>Default Repository Workflow</name>
+  <type>Repository</type>
+  <button name="Add New Repository">
+    <button_desc>Add a new repository for a new project, or to separate designes.</button_desc>
+    <button_icon>create-new-repository.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Add New Repository</button_value>
+  </button>
+  <button name="Discover Source System">
+    <button_desc>The discovery process detects structural information related to entities in database systems and file systems.</button_desc>
+    <button_icon>discover.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Discover Source System</button_value>
+  </button>
+  <button name="Load a Design">
+    <button_desc>Create a new model by importing a design from an external file format.</button_desc>
+    <button_icon>load-design.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Load a Design</button_value>
+  </button>
+  <button name="Design an EDW">
+    <button_desc>Launch the create an EDW wizard.</button_desc>
+    <button_icon>edw-category.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Design an EDW</button_value>
+  </button>
+</workflow>

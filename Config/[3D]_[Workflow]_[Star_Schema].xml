@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wherescape.com/xml/Workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/Workflow workflow_4.xsd">
+  <xml_version>4</xml_version>
+  <name>Star Schema</name>
+  <type>Version</type>
+  <button name="Generate Artificial Keys">
+    <button_desc>Use the Generate artificial keys wizard to create artificial keys for all relationships in a model.</button_desc>
+    <button_icon>artificial_keys.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Generate Artificial Keys</button_value>
+  </button>
+  <button name="Show Pivot Table">
+    <button_desc>When you have created your Star schema design it can be useful to view a sample of the data it will contain in a pivot table, to ensure it meets your requirements.</button_desc>
+    <button_icon>prototype.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Show Pivot Table</button_value>
+  </button>
+  <button name="Document Model">
+    <button_desc>Generate model and source system documentation, data validation documentation or documentation comparing source systems.</button_desc>
+    <button_icon>doco.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Document Model</button_value>
+  </button>
+  <button name="Compare Models">
+    <button_desc>Compare the structure, business rules or profiling metrics for multiple models.</button_desc>
+    <button_icon>compare-models.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Compare Models</button_value>
+  </button>
+  <button name="Generate DDL">
+    <button_desc>Generate DDL for all entities in a model, with the option to filter by target location.</button_desc>
+    <button_icon>ddl.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Generate DDL</button_value>
+  </button>
+  <button name="Create Load and Stage">
+    <button_desc>The Create Load and Stage wizard enables you to generate load and stage tables for a star schema model.</button_desc>
+    <button_icon>create-load-stage.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Create Load and Stage</button_value>
+  </button>
+  <button name="Advanced Copy">
+    <button_desc>Copy a model with the ability to configure the following settings:
+- Set the copied versions to use the original source mappings.
+- Import hidden objects.
+- Apply model conversions.</button_desc>
+    <button_icon>copy.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Advanced Copy</button_value>
+  </button>
+  <button name="Merge Into Other Model">
+    <button_desc>It can often be useful to merge changes to a model into another model particularly when working in a repository or on a design imported from another modeling tool.</button_desc>
+    <button_icon>Mergemodels.png</button_icon>
+    <button_type>WhereScape default</button_type>
+    <button_value>Merge Into Other Model</button_value>
+  </button>
+</workflow>
