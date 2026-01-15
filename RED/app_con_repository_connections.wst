@@ -1,0 +1,24 @@
+1;DRepository
+2;WWindows
+59;OData Warehouse
+60;ODatabase Source System
+61;WDefault Windows Runtime
+63;WRuntime Connection for Scripts
+64;OSales
+62;WRuntime Connection for GIT Scripts
+_WS&TARGET_dv;1;59;2;sqlredtgt;
+
+;;;
+_WS&TARGET_ODS;2;59;2;sqlredtgt;
+
+;;;
+_WS&TARGET_Mart;3;59;2;sqlredtgt;
+
+;;;
+_WS&TARGET_bv;4;59;2;sqlredtgt;
+
+;;;
+_WS&TARGET_Stage;5;59;2;sqlredtgt;
+
+;;;
+_WS&TARGET_dbo;6;59;2;sqlredtgt;dbo;;;

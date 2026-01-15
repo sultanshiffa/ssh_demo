@@ -4,7 +4,7 @@
   <structure>
     <general>
       <repository_name>ssh_demo</repository_name>
-      <repository_purpose>Repo: ssh_demo Branch: development Commit: daac72e</repository_purpose>
+      <repository_purpose>Repo: ssh_demo Branch: development Commit: 6d86c01</repository_purpose>
       <repository_description>CICD-Testing</repository_description>
       <repository_workflow>Custom Repository</repository_workflow>
     </general>
