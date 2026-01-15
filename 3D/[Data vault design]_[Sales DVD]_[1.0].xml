@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<source_system xmlns="http://www.wherescape.com/xml/3D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/3D ./source_system_50.xsd">
+  <xml_version>50</xml_version>
+  <source_application>WhereScape 3D</source_application>
+  <structure>
+    <table_types>
+      <table_type name="View">
+        <group>View</group>
+        <description>A view entity</description>
+        <colour>217,216,217</colour>
+        <object_icon>view_table.png</object_icon>
+        <positioning_characteristic>TERMINAL</positioning_characteristic>
+      </table_type>
+      <table_type name="Not ready for integration">
+        <description>Not ready for integration</description>
+        <colour>255,0,0</colour>
+        <positioning_characteristic>TERMINAL</positioning_characteristic>
+      </table_type>
+      <table_type name="Business Object">
+        <description>Business Object</description>
+        <colour>255,204,0</colour>
+        <positioning_characteristic>TERMINAL</positioning_characteristic>
+      </table_type>
+    </table_types>
+    <column_types>
+      <column_type name="Satellite low volatility">
+        <description>To create a Satellite with low volatile attributes</description>
+        <colour>254,244,125</colour>
+      </column_type>
+      <column_type name="Satellite medium volatility">
+        <description>To create a Satellite with medium volatile attributes</description>
+        <colour>255,208,0</colour>
+      </column_type>
+      <column_type name="Satellite high volatility">
+        <description>To create a Satellite with high volatile attributes</description>
+        <colour>239,155,15</colour>
+      </column_type>
+      <column_type name="Satellite transaction">
+        <description>To create a Satellite with transactional attributes</description>
+        <colour>255,186,0</colour>
+      </column_type>
+      <column_type name="Link business key">
+        <description>Foreign key attributes that make up the Link Business key (Do not rename)</description>
+        <colour>255,0,0</colour>
+      </column_type>
+      <column_type name="Link dependent child">
+        <description>Additional attributes that make up the Link Business key (Do not rename)</description>
+        <colour>127,0,0</colour>
+      </column_type>
+      <column_type name="Business key">
+        <description>The business key (Do not rename)</description>
+        <colour>0,0,255</colour>
+      </column_type>
+      <column_type name="Reference attribute">
+        <description>Reference fields</description>
+        <colour>227,204,255</colour>
+      </column_type>
+      <column_type name="Reference history attribute">
+        <description>Reference history fields</description>
+        <colour>227,127,255</colour>
+      </column_type>
+      <column_type name="Code attribute">
+        <description>Code fields</description>
+        <colour>192,192,192</colour>
+      </column_type>
+      <column_type name="Code history attribute">
+        <description>Code history fields</description>
+        <colour>153,153,153</colour>
+      </column_type>
+      <column_type name="Satellite multi-active attribute">
+        <description>To create a Satellite with Multi-Active attributes</description>
+        <colour>248,231,28</colour>
+      </column_type>
+      <column_type name="Satellite multi-active key">
+        <description>Multi Active Key used in conjoint with another Satellite attribute</description>
+        <colour>153,204,255</colour>
+      </column_type>
+      <column_type name="Berekend Attribuut">
+        <description>Uitkomst van een business rule</description>
+        <colour>0,255,0</colour>
+      </column_type>
+      <column_type name="Reference key">
+        <description>Reference fields</description>
+        <colour>255,153,204</colour>
+      </column_type>
+    </column_types>
+    <relationship_types>
+      <relationship_type name="Duplicate data">
+        <description>Duplicate data</description>
+        <colour>51,102,255</colour>
+      </relationship_type>
+    </relationship_types>
+    <table_ratings>
+      <table_rating>
+        <name>Mandatory</name>
+        <colour>255,0,0</colour>
+      </table_rating>
+      <table_rating>
+        <name>Preferred</name>
+        <colour>255,102,0</colour>
+      </table_rating>
+      <table_rating>
+        <name>Optional</name>
+        <colour>0,255,0</colour>
+      </table_rating>
+    </table_ratings>
+    <column_ratings>
+      <column_rating>
+        <name>Mandatory</name>
+        <colour>255,0,0</colour>
+      </column_rating>
+      <column_rating>
+        <name>Preferred</name>
+        <colour>255,102,0</colour>
+      </column_rating>
+      <column_rating>
+        <name>Optional</name>
+        <colour>0,255,0</colour>
+      </column_rating>
+    </column_ratings>
+    <rdbms_information>
+      <involved_databases>
+        <involved_rdbms>MS_SQL_SERVER</involved_rdbms>
+      </involved_databases>
+    </rdbms_information>
+    <storage_target_locations />
+    <tables>
+      <table name="customer">
+        <columns>
+          <column name="customer_code" nullable="true">
+            <data_type size="10">varchar</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Business key" />
+            </column_types>
+          </column>
+          <column name="customer_name" nullable="true">
+            <data_type size="80">varchar</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite low volatility" />
+            </column_types>
+          </column>
+          <column name="customer_legal_name" nullable="true">
+            <data_type size="255">varchar</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite low volatility" />
+            </column_types>
+          </column>
+          <column name="territory_id" nullable="true">
+            <data_type>int</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite low volatility" />
+            </column_types>
+          </column>
+          <column name="ship_to_address_id" nullable="true">
+            <data_type>int</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="bill_to_address_id" nullable="true">
+            <data_type>int</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="sold_to_address_id" nullable="true">
+            <data_type>int</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="primary_address_type" nullable="true">
+            <data_type size="20">varchar</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="primary_contact_person" nullable="true">
+            <data_type size="255">varchar</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="active_flag" nullable="true">
+            <data_type size="1">char</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="customer_category_code" nullable="true">
+            <data_type size="20">varchar</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="customer_category_description" nullable="true">
+            <data_type size="255">varchar</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="customer_group_code" nullable="true">
+            <data_type size="20">varchar</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="customer_group_description" nullable="true">
+            <data_type size="255">varchar</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="customer_subgroup_code" nullable="true">
+            <data_type size="20">varchar</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="customer_subgroup_description" nullable="true">
+            <data_type size="255">varchar</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="creating_employee_id" nullable="true">
+            <data_type>int</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="created_datetime" nullable="true">
+            <data_type>datetime</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="last_change_employee_id" nullable="true">
+            <data_type>int</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+          <column name="last_change_datetime" nullable="true">
+            <data_type>datetime</data_type>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Satellite medium volatility" />
+            </column_types>
+          </column>
+        </columns>
+        <table_icon>user_table.png</table_icon>
+        <source_sets>
+          <source_set name="Default source">
+            <table_mappings>
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_is_trigger_file>false</source_is_trigger_file>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </table_mappings>
+            <column_mappings column_name="customer_code">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_code</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_name">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_name</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_legal_name">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_legal_name</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="territory_id">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>territory_id</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="ship_to_address_id">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>ship_to_address_id</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="bill_to_address_id">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>bill_to_address_id</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="sold_to_address_id">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>sold_to_address_id</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="primary_address_type">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>primary_address_type</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="primary_contact_person">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>primary_contact_person</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="active_flag">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>active_flag</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_category_code">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_category_code</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_category_description">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_category_description</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_group_code">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_group_code</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_group_description">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_group_description</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_subgroup_code">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_subgroup_code</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_subgroup_description">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_subgroup_description</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="creating_employee_id">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>creating_employee_id</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="created_datetime">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>created_datetime</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="last_change_employee_id">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>last_change_employee_id</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="last_change_datetime">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>last_change_datetime</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <referenced_connections>
+              <referenced_connection preferred="true">Sales</referenced_connection>
+            </referenced_connections>
+          </source_set>
+        </source_sets>
+      </table>
+    </tables>
+    <relations />
+    <schemas />
+  </structure>
+  <connections>
+    <odbc_connection name="Sales">
+      <dsn>Sales</dsn>
+      <max_simultaneous>7</max_simultaneous>
+      <rdbms>MS SQL SERVER</rdbms>
+      <documentation>
+        <subject label="General info" name="General information" />
+      </documentation>
+    </odbc_connection>
+  </connections>
+  <notes>
+    <categories>
+      <category>
+        <name>Observation Note</name>
+        <colour>255,255,255</colour>
+      </category>
+    </categories>
+  </notes>
+  <effort_calculations>
+    <effort_calculation name="WhereScape Basic">
+      <calculation>(%connection_count%+1) * (%table_count% + (%column_count% / %table_count%))</calculation>
+      <description>WhereScape's basic calculation of business effort.</description>
+    </effort_calculation>
+  </effort_calculations>
+</source_system>

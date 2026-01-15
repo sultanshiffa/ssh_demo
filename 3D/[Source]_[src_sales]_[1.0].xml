@@ -51,6 +51,7 @@
         <discovered_name>address</discovered_name>
         <discovered_schema>dbo</discovered_schema>
         <discovered_database>srcSales</discovered_database>
+        <comment>comment</comment>
         <columns>
           <column name="address_id" nullable="true">
             <discovered_name>address_id</discovered_name>
@@ -318,6 +319,7 @@
         <discovered_name>city</discovered_name>
         <discovered_schema>dbo</discovered_schema>
         <discovered_database>srcSales</discovered_database>
+        <comment>city comments added by Ryan.</comment>
         <columns>
           <column name="city_code" nullable="true">
             <discovered_name>city_code</discovered_name>

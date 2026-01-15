@@ -1,0 +1,1178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<source_system xmlns="http://www.wherescape.com/xml/3D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wherescape.com/xml/3D ./source_system_50.xsd">
+  <xml_version>50</xml_version>
+  <source_application>WhereScape 3D</source_application>
+  <structure>
+    <table_types>
+      <table_type name="View">
+        <group>View</group>
+        <description>A view entity</description>
+        <colour>217,216,217</colour>
+        <object_icon>view_table.png</object_icon>
+        <positioning_characteristic>TERMINAL</positioning_characteristic>
+      </table_type>
+      <table_type name="Hub">
+        <group>Hub</group>
+        <description>Data Vault Hub</description>
+        <colour>187,224,255</colour>
+        <object_icon>dv_hub.png</object_icon>
+        <positioning_characteristic>TERMINAL</positioning_characteristic>
+        <table_prefix>h_</table_prefix>
+        <robots>
+          <robot name="dss_record_source">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_record_source</generated_object_name>
+            <data_type size="255" scale="">tgt_varchar</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Record source</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_record_source" />
+            </column_types>
+          </robot>
+          <robot name="dss_load_date">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_load_date</generated_object_name>
+            <data_type size="" scale="">tgt_datetime</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Date and time the row was loaded in the data vault</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_load_date" />
+            </column_types>
+          </robot>
+          <robot name="dss_create_time">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_create_time</generated_object_name>
+            <data_type size="" scale="">tgt_datetime</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Date and time the row was inserted in the data vault</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_create_time" />
+            </column_types>
+          </robot>
+        </robots>
+      </table_type>
+      <table_type name="Link">
+        <group>Link</group>
+        <description>Data Vault Link</description>
+        <colour>245,201,208</colour>
+        <object_icon>dv_link.png</object_icon>
+        <positioning_characteristic>HUB</positioning_characteristic>
+        <table_prefix>l_</table_prefix>
+        <robots>
+          <robot name="dss_record_source">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_record_source</generated_object_name>
+            <data_type size="255" scale="">tgt_varchar</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Record source</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_record_source" />
+            </column_types>
+          </robot>
+          <robot name="dss_load_date">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_load_date</generated_object_name>
+            <data_type size="" scale="">tgt_datetime</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Date and time the row was loaded in the data vault</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_load_date" />
+            </column_types>
+          </robot>
+          <robot name="dss_create_time">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_create_time</generated_object_name>
+            <data_type size="" scale="">tgt_datetime</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Date and time the row was inserted in the data vault</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_create_time" />
+            </column_types>
+          </robot>
+        </robots>
+      </table_type>
+      <table_type name="Satellite">
+        <group>Satellite</group>
+        <description>Data Vault Satellite</description>
+        <colour>255,248,220</colour>
+        <object_icon>dv_satellite.png</object_icon>
+        <positioning_characteristic>TERMINAL</positioning_characteristic>
+        <table_prefix>s_</table_prefix>
+        <robots>
+          <robot name="dss_change_hash">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_change_hash</generated_object_name>
+            <data_type size="32" scale="">tgt_char</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>The changing hash</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>false</is_nullable>
+            <column_types>
+              <column_type name="Change hash key" />
+            </column_types>
+          </robot>
+          <robot name="dss_record_source">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_record_source</generated_object_name>
+            <data_type size="255" scale="">tgt_varchar</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Record source</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_record_source" />
+            </column_types>
+          </robot>
+          <robot name="dss_load_date">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_load_date</generated_object_name>
+            <data_type size="" scale="">tgt_datetime</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Date and time the row was loaded in the data vault</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_load_date" />
+            </column_types>
+          </robot>
+          <robot name="dss_start_date">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_start_date</generated_object_name>
+            <data_type size="" scale="">tgt_datetime</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Date and time the row started in the data vault</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_start_date" />
+            </column_types>
+          </robot>
+          <robot name="dss_version">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_version</generated_object_name>
+            <data_type size="" scale="">tgt_integer</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Version number of a business key in the data vault</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_version" />
+            </column_types>
+          </robot>
+          <robot name="dss_create_time">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_create_time</generated_object_name>
+            <data_type size="" scale="">tgt_datetime</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Date and time the row was inserted in the data vault</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_create_time" />
+            </column_types>
+          </robot>
+        </robots>
+      </table_type>
+      <table_type name="Reference">
+        <group>Reference</group>
+        <description>Data Vault Reference</description>
+        <colour>227,204,255</colour>
+        <object_icon>dv_reference_table.png</object_icon>
+        <positioning_characteristic>TERMINAL</positioning_characteristic>
+        <table_prefix>r_</table_prefix>
+        <robots>
+          <robot name="dss_record_source">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_record_source</generated_object_name>
+            <data_type size="255" scale="">tgt_varchar</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Record source</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_record_source" />
+            </column_types>
+          </robot>
+          <robot name="dss_load_date">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_load_date</generated_object_name>
+            <data_type size="" scale="">tgt_datetime</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Date and time the row was loaded in the data vault</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_load_date" />
+            </column_types>
+          </robot>
+          <robot name="dss_create_time">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_create_time</generated_object_name>
+            <data_type size="" scale="">tgt_datetime</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Date and time the row was inserted in the data vault</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_create_time" />
+            </column_types>
+          </robot>
+        </robots>
+      </table_type>
+      <table_type name="Code">
+        <group>Code</group>
+        <description>Data Vault Code</description>
+        <colour>192,192,192</colour>
+        <object_icon>dv_reference_table.png</object_icon>
+        <positioning_characteristic>TERMINAL</positioning_characteristic>
+        <table_prefix>c_</table_prefix>
+        <robots>
+          <robot name="dss_record_source">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_record_source</generated_object_name>
+            <data_type size="255" scale="">tgt_varchar</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Record source</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_record_source" />
+            </column_types>
+          </robot>
+          <robot name="dss_load_date">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_load_date</generated_object_name>
+            <data_type size="" scale="">tgt_datetime</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Date and time the row was loaded in the data vault</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_load_date" />
+            </column_types>
+          </robot>
+          <robot name="dss_create_time">
+            <generated_object>COLUMN</generated_object>
+            <generated_object_name>dss_create_time</generated_object_name>
+            <data_type size="" scale="">tgt_datetime</data_type>
+            <positioning>BOTTOM</positioning>
+            <col_description>Date and time the row was inserted in the data vault</col_description>
+            <is_pk>false</is_pk>
+            <is_auto_increment>false</is_auto_increment>
+            <is_unique>false</is_unique>
+            <is_nullable>true</is_nullable>
+            <column_types>
+              <column_type name="dss_create_time" />
+            </column_types>
+          </robot>
+        </robots>
+      </table_type>
+      <table_type name="PIT Candidate">
+        <group>PIT Candidate</group>
+        <description>Candidate for Point-In-Time table</description>
+        <colour>219,254,137</colour>
+        <positioning_characteristic>TERMINAL</positioning_characteristic>
+      </table_type>
+      <table_type name="Bridge Candidate">
+        <group>Bridge Candidate</group>
+        <description>Identifies Link/Hub to be included in a Bridge table</description>
+        <colour>202,194,211</colour>
+        <positioning_characteristic>TERMINAL</positioning_characteristic>
+      </table_type>
+      <table_type name="Not ready for integration">
+        <description>Not ready for integration</description>
+        <colour>255,0,0</colour>
+        <positioning_characteristic>TERMINAL</positioning_characteristic>
+      </table_type>
+      <table_type name="Business Object">
+        <description>Business Object</description>
+        <colour>255,204,0</colour>
+        <positioning_characteristic>TERMINAL</positioning_characteristic>
+      </table_type>
+    </table_types>
+    <column_types>
+      <column_type name="Business key">
+        <description>A business key column (Do not rename)</description>
+        <colour>0,0,255</colour>
+      </column_type>
+      <column_type name="Surrogate key">
+        <description>A surrogate key column (Do not rename)</description>
+        <colour>255,0,0</colour>
+      </column_type>
+      <column_type name="Changing attribute">
+        <description>A changing column (Do not rename)</description>
+        <colour>255,208,0</colour>
+      </column_type>
+      <column_type name="Hub hash key">
+        <description>A Hub hash column (Do not rename)</description>
+        <colour>31,229,236</colour>
+      </column_type>
+      <column_type name="Link hash key">
+        <description>A Link hash column (Do not rename)</description>
+        <colour>138,28,0</colour>
+      </column_type>
+      <column_type name="Change hash key">
+        <description>A change hash column (Do not rename)</description>
+        <colour>128,128,128</colour>
+      </column_type>
+      <column_type name="Multi-active satellite sequence attribute">
+        <description>The sequence column for Multi-Active Satellites</description>
+        <colour>153,204,255</colour>
+      </column_type>
+      <column_type name="Hub surrogate key">
+        <description>A Hub surrogate key column (Do not rename)</description>
+        <colour>31,229,236</colour>
+      </column_type>
+      <column_type name="dss_load_date">
+        <description>A dss column for load date</description>
+        <colour>178,178,178</colour>
+      </column_type>
+      <column_type name="dss_start_date">
+        <description>A dss column for start date</description>
+        <colour>178,178,178</colour>
+      </column_type>
+      <column_type name="dss_end_date">
+        <description>A dss column for end date</description>
+        <colour>178,178,178</colour>
+      </column_type>
+      <column_type name="dss_record_source">
+        <description>A dss column for record source</description>
+        <colour>178,178,178</colour>
+      </column_type>
+      <column_type name="dss_update_time">
+        <description>A dss column for last update time</description>
+        <colour>178,178,178</colour>
+      </column_type>
+      <column_type name="dss_create_time">
+        <description>A dss column for create time</description>
+        <colour>178,178,178</colour>
+      </column_type>
+      <column_type name="dss_version">
+        <description>A dss column for version number</description>
+        <colour>178,178,178</colour>
+      </column_type>
+      <column_type name="dss_current_flag">
+        <description>A dss column for indicating current version</description>
+        <colour>178,178,178</colour>
+      </column_type>
+      <column_type name="To be deleted">
+        <description>A column that will be removed</description>
+        <colour>0,0,0</colour>
+      </column_type>
+      <column_type name="Satellite low volatility">
+        <description>To create a Satellite with low volatile attributes</description>
+        <colour>254,244,125</colour>
+      </column_type>
+      <column_type name="Satellite medium volatility">
+        <description>To create a Satellite with medium volatile attributes</description>
+        <colour>255,208,0</colour>
+      </column_type>
+      <column_type name="Link business key">
+        <description>Foreign key attributes that make up the Link Business key (Do not rename)</description>
+        <colour>255,0,0</colour>
+      </column_type>
+      <column_type name="Satellite multi-active attribute">
+        <description>To create a Satellite with Multi-Active attributes</description>
+        <colour>248,231,28</colour>
+      </column_type>
+      <column_type name="Satellite multi-active key">
+        <description>Multi Active Key used in conjoint with another Satellite attribute</description>
+        <colour>153,204,255</colour>
+      </column_type>
+      <column_type name="Reference attribute">
+        <description>Reference fields</description>
+        <colour>227,204,255</colour>
+      </column_type>
+      <column_type name="Link dependent child">
+        <description>Additional attributes that make up the Link Business key (Do not rename)</description>
+        <colour>127,0,0</colour>
+      </column_type>
+      <column_type name="BWT">
+        <description>Bewaartermijn</description>
+        <colour>51,153,102</colour>
+      </column_type>
+      <column_type name="Satellite high volatility">
+        <description>To create a Satellite with high volatile attributes</description>
+        <colour>239,155,15</colour>
+      </column_type>
+      <column_type name="Satellite transaction">
+        <description>To create a Satellite with transactional attributes</description>
+        <colour>255,186,0</colour>
+      </column_type>
+      <column_type name="Reference history attribute">
+        <description>Reference history fields</description>
+        <colour>227,127,255</colour>
+      </column_type>
+      <column_type name="Code attribute">
+        <description>Code fields</description>
+        <colour>192,192,192</colour>
+      </column_type>
+      <column_type name="Berekend Attribuut">
+        <description>Uitkomst van een business rule</description>
+        <colour>0,255,0</colour>
+      </column_type>
+      <column_type name="Reference key">
+        <description>Reference fields</description>
+        <colour>255,153,0</colour>
+      </column_type>
+    </column_types>
+    <relationship_types>
+      <relationship_type name="Duplicate data">
+        <description>Duplicate data</description>
+        <colour>51,102,255</colour>
+      </relationship_type>
+      <relationship_type name="Artificial key">
+        <description>An artificial key</description>
+        <colour>156,79,224</colour>
+      </relationship_type>
+    </relationship_types>
+    <table_ratings>
+      <table_rating>
+        <name>Mandatory</name>
+        <colour>255,0,0</colour>
+      </table_rating>
+      <table_rating>
+        <name>Preferred</name>
+        <colour>255,102,0</colour>
+      </table_rating>
+      <table_rating>
+        <name>Optional</name>
+        <colour>0,255,0</colour>
+      </table_rating>
+    </table_ratings>
+    <column_ratings>
+      <column_rating>
+        <name>Mandatory</name>
+        <colour>255,0,0</colour>
+      </column_rating>
+      <column_rating>
+        <name>Preferred</name>
+        <colour>255,102,0</colour>
+      </column_rating>
+      <column_rating>
+        <name>Optional</name>
+        <colour>0,255,0</colour>
+      </column_rating>
+    </column_ratings>
+    <rdbms_information>
+      <involved_databases>
+        <involved_rdbms>MS_SQL_SERVER</involved_rdbms>
+      </involved_databases>
+    </rdbms_information>
+    <storage_target_locations />
+    <tables>
+      <table name="h_customer">
+        <label>customer</label>
+        <table_types>
+          <table_type name="Hub" />
+        </table_types>
+        <columns>
+          <column name="hk_h_customer" pk="true">
+            <data_type size="32">char</data_type>
+            <label>hk_h_customer</label>
+            <created_by>User</created_by>
+            <column_types>
+              <column_type name="Hub hash key" />
+            </column_types>
+          </column>
+          <column name="customer_code" nullable="true">
+            <data_type size="10">varchar</data_type>
+            <label>customer_code</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Business key" />
+            </column_types>
+          </column>
+          <column name="dss_record_source" nullable="true">
+            <data_type size="255">tgt_varchar</data_type>
+            <comment>Record source</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="dss_record_source" />
+            </column_types>
+          </column>
+          <column name="dss_load_date" nullable="true">
+            <data_type>tgt_datetime</data_type>
+            <comment>Date and time the row was loaded in the data vault</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="dss_load_date" />
+            </column_types>
+          </column>
+          <column name="dss_create_time" nullable="true">
+            <data_type>tgt_datetime</data_type>
+            <comment>Date and time the row was inserted in the data vault</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="dss_create_time" />
+            </column_types>
+          </column>
+        </columns>
+        <table_icon>dv_hub.png</table_icon>
+        <source_sets>
+          <source_set name="Default source">
+            <table_mappings>
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_is_trigger_file>false</source_is_trigger_file>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </table_mappings>
+            <column_mappings column_name="hk_h_customer" />
+            <column_mappings column_name="customer_code">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_code</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="dss_record_source" />
+            <column_mappings column_name="dss_load_date" />
+            <column_mappings column_name="dss_create_time" />
+            <referenced_connections>
+              <referenced_connection preferred="true">Sales</referenced_connection>
+            </referenced_connections>
+          </source_set>
+        </source_sets>
+      </table>
+      <table name="s_customer_lroc">
+        <label>customer</label>
+        <table_types>
+          <table_type name="Satellite" />
+        </table_types>
+        <columns>
+          <column name="hk_h_customer" pk="true">
+            <data_type size="32">char</data_type>
+            <label>hk_h_customer</label>
+            <created_by>Surrogate key</created_by>
+            <column_types>
+              <column_type name="Hub hash key" />
+            </column_types>
+          </column>
+          <column name="customer_name" nullable="true">
+            <data_type size="80">varchar</data_type>
+            <label>customer_name</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="customer_legal_name" nullable="true">
+            <data_type size="255">varchar</data_type>
+            <label>customer_legal_name</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="territory_id" nullable="true">
+            <data_type>int</data_type>
+            <label>territory_id</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="dss_change_hash">
+            <data_type size="32">tgt_char</data_type>
+            <comment>The changing hash</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="Change hash key" />
+            </column_types>
+          </column>
+          <column name="dss_record_source" nullable="true">
+            <data_type size="255">tgt_varchar</data_type>
+            <comment>Record source</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="dss_record_source" />
+            </column_types>
+          </column>
+          <column name="dss_load_date" nullable="true">
+            <data_type>tgt_datetime</data_type>
+            <comment>Date and time the row was loaded in the data vault</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="dss_load_date" />
+            </column_types>
+          </column>
+          <column name="dss_start_date" pk="true" nullable="true">
+            <data_type>tgt_datetime</data_type>
+            <comment>Date and time the row started in the data vault</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="dss_start_date" />
+            </column_types>
+          </column>
+          <column name="dss_version" nullable="true">
+            <data_type>tgt_integer</data_type>
+            <comment>Version number of a business key in the data vault</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="dss_version" />
+            </column_types>
+          </column>
+          <column name="dss_create_time" nullable="true">
+            <data_type>tgt_datetime</data_type>
+            <comment>Date and time the row was inserted in the data vault</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="dss_create_time" />
+            </column_types>
+          </column>
+        </columns>
+        <table_icon>dv_satellite.png</table_icon>
+        <source_sets>
+          <source_set name="Default source">
+            <table_mappings>
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_is_trigger_file>false</source_is_trigger_file>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </table_mappings>
+            <column_mappings column_name="hk_h_customer" />
+            <column_mappings column_name="customer_name">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_name</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_legal_name">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_legal_name</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="territory_id">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>territory_id</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="dss_change_hash" />
+            <column_mappings column_name="dss_record_source" />
+            <column_mappings column_name="dss_load_date" />
+            <column_mappings column_name="dss_start_date" />
+            <column_mappings column_name="dss_version" />
+            <column_mappings column_name="dss_create_time" />
+            <referenced_connections>
+              <referenced_connection preferred="true">Sales</referenced_connection>
+            </referenced_connections>
+          </source_set>
+        </source_sets>
+      </table>
+      <table name="s_customer_mroc">
+        <label>customer</label>
+        <table_types>
+          <table_type name="Satellite" />
+        </table_types>
+        <columns>
+          <column name="hk_h_customer" pk="true">
+            <data_type size="32">char</data_type>
+            <label>hk_h_customer</label>
+            <created_by>Surrogate key</created_by>
+            <column_types>
+              <column_type name="Hub hash key" />
+            </column_types>
+          </column>
+          <column name="ship_to_address_id" nullable="true">
+            <data_type>int</data_type>
+            <label>ship_to_address_id</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="bill_to_address_id" nullable="true">
+            <data_type>int</data_type>
+            <label>bill_to_address_id</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="sold_to_address_id" nullable="true">
+            <data_type>int</data_type>
+            <label>sold_to_address_id</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="primary_address_type" nullable="true">
+            <data_type size="20">varchar</data_type>
+            <label>primary_address_type</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="primary_contact_person" nullable="true">
+            <data_type size="255">varchar</data_type>
+            <label>primary_contact_person</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="active_flag" nullable="true">
+            <data_type size="1">char</data_type>
+            <label>active_flag</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="customer_category_code" nullable="true">
+            <data_type size="20">varchar</data_type>
+            <label>customer_category_code</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="customer_category_description" nullable="true">
+            <data_type size="255">varchar</data_type>
+            <label>customer_category_description</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="customer_group_code" nullable="true">
+            <data_type size="20">varchar</data_type>
+            <label>customer_group_code</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="customer_group_description" nullable="true">
+            <data_type size="255">varchar</data_type>
+            <label>customer_group_description</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="customer_subgroup_code" nullable="true">
+            <data_type size="20">varchar</data_type>
+            <label>customer_subgroup_code</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="customer_subgroup_description" nullable="true">
+            <data_type size="255">varchar</data_type>
+            <label>customer_subgroup_description</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="creating_employee_id" nullable="true">
+            <data_type>int</data_type>
+            <label>creating_employee_id</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="created_datetime" nullable="true">
+            <data_type>datetime</data_type>
+            <label>created_datetime</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="last_change_employee_id" nullable="true">
+            <data_type>int</data_type>
+            <label>last_change_employee_id</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="last_change_datetime" nullable="true">
+            <data_type>datetime</data_type>
+            <label>last_change_datetime</label>
+            <created_by>Discovery</created_by>
+            <column_types>
+              <column_type name="Changing attribute" />
+            </column_types>
+          </column>
+          <column name="dss_change_hash">
+            <data_type size="32">tgt_char</data_type>
+            <comment>The changing hash</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="Change hash key" />
+            </column_types>
+          </column>
+          <column name="dss_record_source" nullable="true">
+            <data_type size="255">tgt_varchar</data_type>
+            <comment>Record source</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="dss_record_source" />
+            </column_types>
+          </column>
+          <column name="dss_load_date" nullable="true">
+            <data_type>tgt_datetime</data_type>
+            <comment>Date and time the row was loaded in the data vault</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="dss_load_date" />
+            </column_types>
+          </column>
+          <column name="dss_start_date" pk="true" nullable="true">
+            <data_type>tgt_datetime</data_type>
+            <comment>Date and time the row started in the data vault</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="dss_start_date" />
+            </column_types>
+          </column>
+          <column name="dss_version" nullable="true">
+            <data_type>tgt_integer</data_type>
+            <comment>Version number of a business key in the data vault</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="dss_version" />
+            </column_types>
+          </column>
+          <column name="dss_create_time" nullable="true">
+            <data_type>tgt_datetime</data_type>
+            <comment>Date and time the row was inserted in the data vault</comment>
+            <created_by>Table type</created_by>
+            <column_types>
+              <column_type name="dss_create_time" />
+            </column_types>
+          </column>
+        </columns>
+        <table_icon>dv_satellite.png</table_icon>
+        <source_sets>
+          <source_set name="Default source">
+            <table_mappings>
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_is_trigger_file>false</source_is_trigger_file>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </table_mappings>
+            <column_mappings column_name="hk_h_customer" />
+            <column_mappings column_name="ship_to_address_id">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>ship_to_address_id</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="bill_to_address_id">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>bill_to_address_id</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="sold_to_address_id">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>sold_to_address_id</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="primary_address_type">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>primary_address_type</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="primary_contact_person">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>primary_contact_person</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="active_flag">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>active_flag</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_category_code">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_category_code</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_category_description">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_category_description</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_group_code">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_group_code</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_group_description">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_group_description</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_subgroup_code">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_subgroup_code</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="customer_subgroup_description">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>customer_subgroup_description</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="creating_employee_id">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>creating_employee_id</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="created_datetime">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>created_datetime</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="last_change_employee_id">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>last_change_employee_id</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="last_change_datetime">
+              <source_mapping>
+                <source_database>srcSales</source_database>
+                <source_schema>dbo</source_schema>
+                <source_table>customer</source_table>
+                <source_column>last_change_datetime</source_column>
+                <source_category>Source</source_category>
+                <source_model>src_sales</source_model>
+                <source_version>1.0</source_version>
+              </source_mapping>
+            </column_mappings>
+            <column_mappings column_name="dss_change_hash" />
+            <column_mappings column_name="dss_record_source" />
+            <column_mappings column_name="dss_load_date" />
+            <column_mappings column_name="dss_start_date" />
+            <column_mappings column_name="dss_version" />
+            <column_mappings column_name="dss_create_time" />
+            <referenced_connections>
+              <referenced_connection preferred="true">Sales</referenced_connection>
+            </referenced_connections>
+          </source_set>
+        </source_sets>
+      </table>
+    </tables>
+    <relations>
+      <relation>
+        <fk_table>s_customer_lroc</fk_table>
+        <fk_column>hk_h_customer</fk_column>
+        <referenced_table>h_customer</referenced_table>
+        <referenced_column>hk_h_customer</referenced_column>
+        <visible>true</visible>
+        <generated>true</generated>
+      </relation>
+      <relation>
+        <fk_table>s_customer_mroc</fk_table>
+        <fk_column>hk_h_customer</fk_column>
+        <referenced_table>h_customer</referenced_table>
+        <referenced_column>hk_h_customer</referenced_column>
+        <visible>true</visible>
+        <generated>true</generated>
+      </relation>
+    </relations>
+    <schemas />
+  </structure>
+  <connections>
+    <odbc_connection name="Sales">
+      <dsn>Sales</dsn>
+      <max_simultaneous>7</max_simultaneous>
+      <rdbms>MS SQL SERVER</rdbms>
+      <documentation>
+        <subject label="General info" name="General information" />
+      </documentation>
+    </odbc_connection>
+  </connections>
+  <notes>
+    <categories>
+      <category>
+        <name>Observation Note</name>
+        <colour>255,255,255</colour>
+      </category>
+    </categories>
+  </notes>
+  <effort_calculations>
+    <effort_calculation name="WhereScape Basic">
+      <calculation>(%connection_count%+1) * (%table_count% + (%column_count% / %table_count%))</calculation>
+      <description>WhereScape's basic calculation of business effort.</description>
+    </effort_calculation>
+  </effort_calculations>
+</source_system>
