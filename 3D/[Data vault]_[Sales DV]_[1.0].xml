@@ -524,7 +524,7 @@
           <column name="customer_code" nullable="true">
             <data_type size="10">varchar</data_type>
             <label>customer_code</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Business key" />
             </column_types>
@@ -606,7 +606,7 @@
           <column name="customer_name" nullable="true">
             <data_type size="80">varchar</data_type>
             <label>customer_name</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -614,7 +614,7 @@
           <column name="customer_legal_name" nullable="true">
             <data_type size="255">varchar</data_type>
             <label>customer_legal_name</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -622,7 +622,7 @@
           <column name="territory_id" nullable="true">
             <data_type>int</data_type>
             <label>territory_id</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -753,7 +753,7 @@
           <column name="ship_to_address_id" nullable="true">
             <data_type>int</data_type>
             <label>ship_to_address_id</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -761,7 +761,7 @@
           <column name="bill_to_address_id" nullable="true">
             <data_type>int</data_type>
             <label>bill_to_address_id</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -769,7 +769,7 @@
           <column name="sold_to_address_id" nullable="true">
             <data_type>int</data_type>
             <label>sold_to_address_id</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -777,7 +777,7 @@
           <column name="primary_address_type" nullable="true">
             <data_type size="20">varchar</data_type>
             <label>primary_address_type</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -785,7 +785,7 @@
           <column name="primary_contact_person" nullable="true">
             <data_type size="255">varchar</data_type>
             <label>primary_contact_person</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -793,7 +793,7 @@
           <column name="active_flag" nullable="true">
             <data_type size="1">char</data_type>
             <label>active_flag</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -801,7 +801,7 @@
           <column name="customer_category_code" nullable="true">
             <data_type size="20">varchar</data_type>
             <label>customer_category_code</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -809,7 +809,7 @@
           <column name="customer_category_description" nullable="true">
             <data_type size="255">varchar</data_type>
             <label>customer_category_description</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -817,7 +817,7 @@
           <column name="customer_group_code" nullable="true">
             <data_type size="20">varchar</data_type>
             <label>customer_group_code</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -825,7 +825,7 @@
           <column name="customer_group_description" nullable="true">
             <data_type size="255">varchar</data_type>
             <label>customer_group_description</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -833,7 +833,7 @@
           <column name="customer_subgroup_code" nullable="true">
             <data_type size="20">varchar</data_type>
             <label>customer_subgroup_code</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -841,7 +841,7 @@
           <column name="customer_subgroup_description" nullable="true">
             <data_type size="255">varchar</data_type>
             <label>customer_subgroup_description</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -849,7 +849,7 @@
           <column name="creating_employee_id" nullable="true">
             <data_type>int</data_type>
             <label>creating_employee_id</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -857,7 +857,7 @@
           <column name="created_datetime" nullable="true">
             <data_type>datetime</data_type>
             <label>created_datetime</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -865,7 +865,7 @@
           <column name="last_change_employee_id" nullable="true">
             <data_type>int</data_type>
             <label>last_change_employee_id</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>
@@ -873,7 +873,7 @@
           <column name="last_change_datetime" nullable="true">
             <data_type>datetime</data_type>
             <label>last_change_datetime</label>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Changing attribute" />
             </column_types>

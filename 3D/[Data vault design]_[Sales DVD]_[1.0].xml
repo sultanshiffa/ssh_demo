@@ -129,140 +129,140 @@
         <columns>
           <column name="customer_code" nullable="true">
             <data_type size="10">varchar</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Business key" />
             </column_types>
           </column>
           <column name="customer_name" nullable="true">
             <data_type size="80">varchar</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite low volatility" />
             </column_types>
           </column>
           <column name="customer_legal_name" nullable="true">
             <data_type size="255">varchar</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite low volatility" />
             </column_types>
           </column>
           <column name="territory_id" nullable="true">
             <data_type>int</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite low volatility" />
             </column_types>
           </column>
           <column name="ship_to_address_id" nullable="true">
             <data_type>int</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="bill_to_address_id" nullable="true">
             <data_type>int</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="sold_to_address_id" nullable="true">
             <data_type>int</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="primary_address_type" nullable="true">
             <data_type size="20">varchar</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="primary_contact_person" nullable="true">
             <data_type size="255">varchar</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="active_flag" nullable="true">
             <data_type size="1">char</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="customer_category_code" nullable="true">
             <data_type size="20">varchar</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="customer_category_description" nullable="true">
             <data_type size="255">varchar</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="customer_group_code" nullable="true">
             <data_type size="20">varchar</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="customer_group_description" nullable="true">
             <data_type size="255">varchar</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="customer_subgroup_code" nullable="true">
             <data_type size="20">varchar</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="customer_subgroup_description" nullable="true">
             <data_type size="255">varchar</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="creating_employee_id" nullable="true">
             <data_type>int</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="created_datetime" nullable="true">
             <data_type>datetime</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="last_change_employee_id" nullable="true">
             <data_type>int</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>
           </column>
           <column name="last_change_datetime" nullable="true">
             <data_type>datetime</data_type>
-            <created_by>Discovery</created_by>
+            <created_by>Imported</created_by>
             <column_types>
               <column_type name="Satellite medium volatility" />
             </column_types>

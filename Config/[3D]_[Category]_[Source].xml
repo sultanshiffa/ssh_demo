@@ -226,6 +226,12 @@
           <object_icon>view_table.png</object_icon>
           <positioning_characteristic>TERMINAL</positioning_characteristic>
         </table_type>
+        <table_type>
+          <name>mytest</name>
+          <description>my test desc</description>
+          <colour>153,204,0</colour>
+          <positioning_characteristic>TERMINAL</positioning_characteristic>
+        </table_type>
       </table_types>
       <table_ratings>
         <table_rating>
